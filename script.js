@@ -25,29 +25,7 @@ let petitdej = document.getElementById("petitdej");
 let regimeOptions = document.getElementById("regime-options");
 let restrictionsOptions = document.getElementById("restrictions-options");
 
-let prix = {
-  igloo: 500,
-  laponie: 850,
-  chauffeur: 11,
-  petitdej: 15,
-  repas: 15,
-  visite: 15,
-};
-
-function toggleDietOptions() {
-  if (repas.checked || petitdej.checked) {
-    regimeOptions.classList.remove("d-none");
-    restrictionsOptions.classList.remove("d-none");
-  } else {
-    regimeOptions.classList.add("d-none");
-    restrictionsOptions.classList.add("d-none");
-  }
-}
-
-repas.addEventListener("change", toggleDietOptions);
-petitdej.addEventListener("change", toggleDietOptions);
-
-form.addEventListener("submit", (e) => {
+form.addEventListener("submit", function (e) {
   e.preventDefault();
 
   let prenom = form.prenom.value.trim();
@@ -69,13 +47,13 @@ form.addEventListener("submit", (e) => {
   const emailRegex = /^[a-z0-9.%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i;
   const phoneRegex = /^[0-9\s-/]{10,14}$/;
   const cpRegex = /^\d{5}$/;
-  const villeRegex = /^[A-Za-z0-9À-ÿ\s,'\-]+$/
+  const villeRegex = /^[A-Za-zÀ-ÿ\s,'\-]+$/
 
 
-  if (nom.length < 2 || nom.length > 30 || !regexNom.test(prenom)) {
+  if (nom.length < 2 || nom.length > 20 || !regexNom.test(prenom)) {
     error.push("Votre nom doit faire entre 2 et 30 caractères");
   }
-  if (prenom.length < 2 || prenom.length > 30 || !regexNom.test(nom)) {
+  if (prenom.length < 2 || prenom.length > 20 || !regexNom.test(nom)) {
     error.push("Votre prénom doit faire entre 2 et 30 caractères");
   }
   if (!emailRegex.test(email)) {
@@ -93,33 +71,17 @@ form.addEventListener("submit", (e) => {
   if (!villeRegex.test(ville)) {
     error.push("Entrez une ville valide");
   }
-
   if (!hotel || !chambre || !personnes) {
     error.push("Veuillez selectionner les champs vide");
   }
-  if (dateArrivee === "" || dateDepart === "") {
+  if (arrivee === "" || depart === "") {
     error.push("Dates manquantes");
-  } else if (new Date(dateDepart) <= new Date(dateArrivee)) {
+  } else if (new Date(depart) <= new Date(arrivee)) {
     error.push("La date de départ doit être après l'arrivée");
   }
 
-
-  let difference = depart - arrivee;
-  let nombreDeNuits = difference / (1000 * 60 * 60 * 24);
-  let total = prix[chambre] * nombreDeNuits;
-
-  if (form.chauffeur.checked) total += prix.chauffeur * nuits;
-  if (form.visite.checked) total += prix.visite;
-
-  if (petitdej.checked) total += prix.petitdej * personnes * nuits;
-  if (repas.checked && form["repas-type"].value !== "ponctuel") {
-    total += prix.repas * personnes * nuits;
+  let resultat = document.getElementById("result");
+  if (error.length > 0) {
+    resultat.innerHTML = error.join("<br>");
   }
-
-  // Récapitulatif simple
-  alert(`Réservation validée !\nMontant total : ${total}€\nMerci ${prenom} ${nom}`);
-  form.reset();
-  regimeOptions.classList.add("d-none");
-  restrictionsOptions.classList.add("d-none");
 });
-
