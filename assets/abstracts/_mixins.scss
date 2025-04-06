@@ -1,0 +1,80 @@
+@use "variables" as *;
+
+@mixin h1 {
+    font-family: $playfair-medium;
+    font-size: $h1-size;
+    color: $tertiary;
+    text-align: right;
+}
+
+@mixin h2 {
+    font-family: $playfair-medium;
+    font-size: $h2-size;
+    color: $primary;
+}
+
+@mixin h3 {
+    font-family: $playfair-bold;
+    font-size: $h3-size;
+    color: $primary;
+}
+
+@mixin h4 {
+    font-family: $playfair-bold;
+    font-size: $h4-size;
+    color: $primary;
+}
+
+@mixin h5 {
+    font-family: $karla-bold;
+    font-size: $h5-size;
+    color: $primary;
+}
+
+@mixin p {
+    font-family: $karla-regular;
+    font-size: $p-size;
+    color: $primary;
+}
+
+@mixin btn-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $karla-regular;
+    font-size: $p-size;
+    color: $text-button;
+}
+
+@mixin p-legend {
+    font-family: $karla-regular;
+    font-size: $p-legend-size;
+    color: $primary;
+}
+
+@mixin btn-primary {
+    width: 180px;
+    height: 49px;
+    background-color: $primary;
+    color: $text-button;
+    border-radius: 6px;
+    border: none;
+    @include btn-text;
+}
+
+@mixin btn-secondary {
+    height: $btn-secondary-height;
+    padding: 0 $btn-secondary-padding-x;
+    background-color: $secondary;
+    color: $text-button;
+    border-radius: 6px;
+    border: none;
+    @include btn-text;
+}
+
+@mixin flex($direction: row, $justify: center, $align: center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+  }

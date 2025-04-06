@@ -1,0 +1,144 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+form {
+  background: rgba(217, 199, 179, 1);
+  border-radius: 5px;
+
+  input,
+  select {
+    background: rgba(225, 210, 194, 1);
+    color: $primary;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem;
+  }
+}
+
+.reservation-form {
+  max-width: 60%;
+  margin: 3rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  .user-info {
+    display: grid;
+    gap: 1rem;
+    padding: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "prenom nom"
+      "email tel"
+      "adresse adresse"
+      "cp ville";
+
+    >div {
+      /* permet de cibler tous les enfants div de user-info*/
+      display: flex;
+      flex-direction: column;
+    }
+
+    .prenom {
+      grid-area: prenom;
+    }
+
+    .nom {
+      grid-area: nom;
+    }
+
+    .email {
+      grid-area: email;
+    }
+
+    .tel {
+      grid-area: tel;
+    }
+
+    .adresse {
+      grid-area: adresse;
+    }
+
+    .cp {
+      grid-area: cp;
+    }
+
+    .ville {
+      grid-area: ville;
+    }
+  }
+
+  .reservation-detail {
+    display: grid;
+    gap: 1rem;
+    padding: 1rem;
+    grid-template-areas:
+      "hotel chambre personnes"
+      "arrivee depart rien ";
+
+    >div {
+      /* permet de cibler tous les div enfants */
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hotel {
+      grid-area: hotel;
+    }
+
+    .chambre {
+      grid-area: chambre;
+    }
+
+    .personnes {
+      grid-area: personnes;
+    }
+
+    .arrivee {
+      grid-area: arrivee;
+    }
+
+    .depart {
+      grid-area: depart;
+    }
+  }
+
+  .options {
+    display: grid;
+    gap: 1rem;
+    padding: 1rem;
+    grid-template-areas:
+      "petitdej repas repas"
+      "chauffeur visite visite";
+
+    .petitdej {
+      grid-area: petitdej;
+    }
+
+    .repas {
+      grid-area: repas;
+    }
+
+    .chauffeur {
+      grid-area: chauffeur;
+    }
+
+    .visite {
+      grid-area: visite;
+    }
+
+  }
+
+  .more-options {
+    @include flex(row, space-around, center);
+
+    >div {
+      /* permet de cibler tous les enfants div de user-info*/
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  button{
+    margin: auto;
+  }
+}

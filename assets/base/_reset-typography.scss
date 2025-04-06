@@ -1,0 +1,45 @@
+@use '../abstracts/typography' as *;
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    @include p;
+}
+
+p{
+    @include p;
+}
+
+.legend{
+    @include p-legend;
+}
+
+h1{
+    @include h1;
+
+}
+
+h2{
+    @include h2;
+}
+
+h3{
+    @include h3;
+}
+
+h4{
+    @include h4;
+}
+
+h5{
+    @include h5;
+}
+
+span{
+    @include p;
+}

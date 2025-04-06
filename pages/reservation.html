@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4 Éléments - Reserver - Séjour dans des hotels d'exceptions</title>
+    <meta name="description" content="Découvrez les hôtels d'exceptions 4 Éléments.">
+    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="container-header">
+            <div class="menu-left">
+                <div class="logo">
+                    <a href="../index.html" title="Retour à l'accueil"><img
+                            src="../assets/images/pictures/logo/logo-noir.png" alt="Logo 4 Elements"></a>
+                </div>
+                <nav class="navbar">
+                    <ul>
+                        <li><a href="feu.html" title="Venez découvrir l'hotel Feu de 4 éléments">Feu</a></li>
+                        <li><a href="#">Air</a></li>
+                        <li><a href="#">Terre</a></li>
+                        <li><a href="#">Eau</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="menu-right">
+                <div class="social">
+                    <p>Contact</p>
+                    <img src="../assets/images/icons/instagram.svg" alt="Logo instagram">
+                    <img src="../assets/images/icons/facebook.svg" alt="Logo Facebook">
+                </div>
+                <div class="btn-cta">
+                    <a href="reservation.html" title="Cliquez pour réserver" class="secondary-btn">Reserver</a>
+                    <a href="#">Se connecter</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <form id="reservation-form" class="reservation-form">
+            <h4>Informations personnelles</h4>
+            <fieldset class="user-info">
+                <div class="prenom">
+                    <label for="prenom">Prénom:</label>
+                    <input type="text" id="prenom" name="prenom" placeholder="ex. Jacques">
+                </div>
+
+                <div class="nom">
+                    <label for="nom">Nom:</label>
+                    <input type="text" id="nom" name="nom" placeholder="ex.Dupond">
+                </div>
+
+                <div class="email">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="exemple@toto.fr">
+                </div>
+
+                <div class="telephone">
+                    <label for="telephone">Téléphone:</label>
+                    <input type="tel" id="telephone" name="telephone" placeholder="01.23.45.67.89">
+                </div>
+
+                <div class="adresse">
+                    <label for="adresse">Adresse:</label>
+                    <input type="text" id="adresse" name="adresse" placeholder="Adresse postale">
+                </div>
+
+                <div class="codepostal">
+                    <label for="codepostal">Code postal:</label>
+                    <input type="text" id="codepostal" name="codepostal" placeholder="ex. 75000">
+                </div>
+
+                <div class="ville">
+                    <label for="ville">Ville:</label>
+                    <input type="text" id="ville" name="ville" placeholder="ex. Paris">
+                </div>
+            </fieldset>
+            <h4>Détails de la réservation</h4>
+            <fieldset class="reservation-detail">
+                <div class="hotel-choice">
+                    <label for="hotel">Hôtel:</label>
+                    <select id="hotel" name="hotel">
+                        <option value="">Choisir un hôtel</option>
+                        <option value="feu">Hôtel Feu</option>
+                    </select>
+                </div>
+
+                <div class="room-choice">
+                    <label for="chambre">Logement:</label>
+                    <select id="chambre" name="chambre">
+                        <option value="">Choisir un logement</option>
+                        <option value="igloo">Igloo – 500€ / nuit</option>
+                        <option value="laponie">Suite Laponie – 850€ / nuit</option>
+                    </select>
+                </div>
+
+                <div class="nb-personnes">
+                    <label for="personnes">Nombre de personnes:</label>
+                    <select id="personnes" name="personnes">
+                        <option value="">Choisir</option>
+                        <option value="1">1 personne</option>
+                        <option value="2">2 personnes</option>
+                    </select>
+                </div>
+
+                <div class="arrivee">
+                    <label for="arrivee">Date d’arrivée:</label>
+                    <input type="date" id="arrivee" name="arrivee">
+                </div>
+
+                <div class="depart">
+                    <label for="depart">Date de départ:</label>
+                    <input type="date" id="depart" name="depart">
+                </div>
+
+            </fieldset>
+            <h4>Options</h4>
+            <fieldset class="options">
+                <div class="checkbox">
+                    <input type="checkbox" id="petitdej" name="options" value="petitdej">
+                    <label for="petitdej">Petit déjeuner – 15€ / personne / jour</label>
+                </div>
+
+                <div class="checkbox">
+                    <input type="checkbox" id="repas" name="options" value="repas">
+                    <label for="repas">Repas – 15€ / personne / repas</label>
+                </div>
+
+                <div class="checkbox">
+                    <input type="checkbox" id="chauffeur" name="options" value="chauffeur">
+                    <label for="chauffeur">Chauffeur – 11€ / jour</label>
+                </div>
+
+                <div class="checkbox">
+                    <input type="checkbox" id="visite" name="options" value="visite">
+                    <label for="visite">Visite guidée – 15€</label>
+                </div>
+            </fieldset>
+                <div class="more-options">
+                    <div class="d-none" id="regime-options">
+
+                        <div class="repas" id="repas">
+                            <label for="repas-type">Type de repas:</label>
+                            <select id="repas-type" name="repas-type">
+                                <option value="">Choisir</option>
+                                <option value="midi">Midi</option>
+                                <option value="soir">Soir</option>
+                                <option value="ponctuel">Ponctuel</option>
+                            </select>
+                        </div>
+
+                        <label>Régime alimentaire</label>
+                        <select name="regime" id="regime">
+                            <option value="non">Non</option>
+                            <option value="vegan">Végan</option>
+                            <option value="vegetarien">Végétarien</option>
+                        </select>
+                    </div>
+
+                    <div class="d-none" id="restrictions-options">
+                        <label>Restrictions alimentaires</label>
+                        <div class="checkbox"><input type="checkbox" value="gluten">Sans gluten</div>
+                        <div class="checkbox"><input type="checkbox" value="lactose">Sans lactose</div>
+                        <div class="other"><input type="text" placeholder="Autres allergies ou intolérances"></div>
+                    </div>
+                </div>
+
+            
+
+            <button class="primary-btn" type="submit">Réserver</button>
+        </form>
+    </main>
+    <footer>
+        <div class="container-footer">
+            <div class="footer-reseau">
+                <div class="logo">
+                    <img src="../assets/images/pictures/logo/logo-noir.png" alt="Logo de l'entreprise 4elements">
+                </div>
+                <span class="legend">N'attendez plus pour vivre l'expérience 4 éléments le temps d’une nuit.</span>
+                <div class="social">
+                    <img src="../assets/images/icons/instagram.svg" alt="logo instagram">
+                    <img src="../assets/images/icons/facebook.svg" alt="logo facebook">
+                </div>
+            </div>
+            <div class="footer-contact">
+                <h5>Contact</h5>
+                <div class="contact-mode">
+                    <p class="legend"><span class="bold">Adresse : </span>8 avenue exemple</p>
+                    <p class="legend"><span class="bold">Ouverture : </span>Tous les jours de 9h à 20h30</p>
+                    <p class="legend"><span class="bold">Tél : </span>33 08 280 28002</p>
+                </div>
+                <a href="reservation.html" title="Cliquez pour reserver" class="secondary-btn">Reserver en ligne</a>
+            </div>
+            <div class="footer-mention">
+                <nav>
+                    <ul>
+                        <li><a href="#"><span class="bold legend">Mentions légales</span></a></li>
+                        <li><a href="#"><span class="bold legend">Crédits</span></a></li>
+                        <li><a href="#"><span class="bold legend">CGV</span></a></li>
+                        <li><a href="#"><span class="bold legend">Confidentialité</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+
+</html>

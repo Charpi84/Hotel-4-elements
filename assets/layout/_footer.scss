@@ -1,0 +1,48 @@
+@use "../abstracts/mixins" as *;
+
+footer {
+    padding: 2.5rem 3rem;
+    background-color: #ffffff;
+  
+    .container-footer {
+      @include flex;
+      gap: 15rem;
+    }
+  
+    .footer-reseau,
+    .footer-contact,
+    .footer-mention {
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 calc(33% - 2rem);
+      gap: 2rem;
+
+    nav ul{
+        @include flex(column, center, flex-start);
+        gap: 2rem;
+    }
+      img {
+        height: 64px;
+      }
+  
+      .legend {
+        @include p-legend
+      }
+      .bold{
+        font-weight: 700;
+      }
+  
+      .social {
+        display: flex;
+        gap: 1rem;
+        img{
+            width: 20px;
+        }
+      }
+  
+      button.secondary-btn {
+        align-self: flex-start;
+      }
+    }
+  }
+  
